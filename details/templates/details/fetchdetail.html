@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style> 
+        a{
+            padding: 20px;
+           
+            font-size: 25px;
+        }
+        table{
+            margin-top: 30px;
+        }
+
+    </style>
+    
+</head>
+
+
+<body align="center" bgcolor="pink">
+    <h1> Display Details of Student</h1>
+    <a href="{% url 'homepage'%}">Home</a>
+    <a href="{% url 'fillform'%}">Insert</a>
+    <a href="{% url 'fetchdetail'%}">Display</a>
+    {% comment %} <a href="{% url 'update'%}">Update</a> {% endcomment %}
+    {% comment %} <a href="{% url 'delete'%}">Delete</a> {% endcomment %}
+
+
+<table  border= "1" width="500px" cellpadding= "15px" align="center" >
+  <tr  >
+     <th>Name</th>
+     <th>Email</th>     
+     <th>Age</th>
+     <th>Address</th>
+     <th>Mobilenumber</th>
+     <th>Image</th>
+     <th>Update</th>
+     <th>delete</th>
+  </tr>
+
+  {% for i in data %}
+
+  <tr>
+  <td>{{i.name}}</td>
+  <td>{{i.email}}</td>
+  <td>{{i.age}}</td>
+  <td>{{i.address}}</td>
+  <td>{{i.mobile}}</td>
+
+  <td><img src="{{i.image.url}}" width="100px" height="100px" ></td>
+
+
+  <td><a href="{% url 'update' i.id %}">Update</a></td>
+  <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+
+</tr>
+{% endfor %} 
+</table>
+
+  {% comment %} <tr> {% endcomment %}
+    {% comment %} {% for i,j,k,l,t in data%} {% endcomment %}
+      {% comment %} <td>{{i}}</td> {% endcomment %}
+      {% comment %} <td>{{j}}</td> {% endcomment %}
+      {% comment %} <td>{{k}}</td> {% endcomment %}
+      {% comment %} <td>{{l}}</td> {% endcomment %}
+      {% comment %} <td>{{t}}</td> {% endcomment %}
+
+
+  {% comment %} </tr> {% endcomment %}
+  {% comment %} {% endfor %} {% endcomment %}
+  {% comment %} <tr> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+{% comment %} </tr> {% endcomment %}
+{% comment %} <tr> {% endcomment %}
+    {% comment %} <tr> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+        {% comment %} <td></td> {% endcomment %}
+    {% comment %} </tr> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+    {% comment %} <td></td> {% endcomment %}
+{% comment %} </tr> {% endcomment %}
+
+
+
+{% comment %} <h1>Dynamic data</h1> {% endcomment %}
+  {% comment %} {{data}}     {% endcomment %}
+  {% comment %} define the  variale----> {{  }} {% endcomment %}
+ 
+  {% comment %} {% for i in data %} {% endcomment %}
+
+  {% comment %} {{i}} {% endcomment %}
+  {% comment %} <br> {% endcomment %}
+   
+
+
+
+
+
+</body>
+</html>

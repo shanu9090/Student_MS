@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style> 
+        #main-home h1{
+            float:left;
+        }
+     a{
+         padding: 20px;
+        
+         font-size: 25px;
+     }
+
+   
+ </style>
+
+ 
+ 
+</head>
+<body bgcolor="pink" align="center" >
+    
+    <a href="{% url 'homepage'%}">Home</a>
+    <a href="{% url 'fillform'%}">Insert</a>
+    <a href="{% url 'fetchdetail'%}">Display</a>
+    {% comment %} <a href="{% url 'update'%}">Update</a> {% endcomment %}
+    {% comment %} <a href="{% url 'delete'%}">Delete</a> {% endcomment %}
+    <div id="main-home">
+    <h1> Student management System</h1>
+    <br>
+    <br>
+    <br>
+    <h3>A CRUD app is a specific type of software application that consists of four basic
+         operations; Create, Read, Update, Delete.
+         At a high level, CRUD apps consist of three parts; the database, user interface,
+        and APIs.
+        The database is where your data is stored.
+        A database management system is used to manage the database. 
+        There are several different types of database management systems (DBMS) 
+        that can be categorized by how they store data; relational (SQL), Document
+         (NoSQL). If you are deciding what DBMS to choose for your CRUD app, here’s a
+          list of the 14 best database management systems . Going forward, our content
+           will focus on SQL. SQL databases consist of tables. Tables consist of records.
+           Records consist of fields. Fields consist of data.
+      r Interface
+   </h3>
+   
+
+</div>
+</body>
+</html>

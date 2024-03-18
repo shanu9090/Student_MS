@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style> 
+
+        a{
+            padding: 20px;
+           
+            font-size: 30px;
+        }
+        form{
+            font-size: 25px;
+            width: 500px;
+        }
+      
+      
+      
+       
+       
+    </style>
+    
+</head>
+<body align="center" bgcolor="pink">
+    <div id="nav">
+    <a href="{% url 'homepage'%}">Home</a>
+    <a href="{% url 'fillform'%}">Insert</a>
+    <a href="{% url 'fetchdetail'%}">Display</a>
+    </div>
+    {% comment %} <a href="{% url 'update'%}">Update</a> {% endcomment %}
+    {% comment %} <a href="{% url 'delete'%}">Delete</a> {% endcomment %}
+    
+
+ <form align="center" width="500px" action="{% url 'fillform'%}" method="POST" enctype="multipart/form-data" >
+    <h2 align="center" > Student Form </h2>
+    {% csrf_token %}
+
+    <table>
+      
+      <tr><td>  Enter Name :- </td><td><input type="text" name="nm"  > </td></tr><br> <h3 style="color:red">{{msg}}</h3>
+      <tr><td>  Enter Email :- </td><td> <input type="email" name="email" > </td></tr>
+      <tr><td> Enter Address :- </td><td><input type="text" name="add" > </td></tr>
+      <tr><td>  Enter Age :- </td><td><input type="texr" name="age">     </td></tr>
+     <tr><td> Enter Mobilenumber :- </td><td><input type="contact" name="phone" > </td></tr> 
+        {% comment %} Enter Course :- <input type="text" > <br> <br>  {% endcomment %}
+        {% comment %} Enter Stream :- <input type="text" > <br> <br> {% endcomment %}
+        <tr><td> Image :- </td><td><input type="file" name="img" > </td></tr>  
+        
+      <tr> <td> <button type="Submit">Submit </button></td></tr>
+
+    </tabel>
+
+ </form>
+</body>
+</html>
